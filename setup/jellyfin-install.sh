@@ -75,16 +75,16 @@ apt-get install -y apt-transport-https &>/dev/null
 apt-get install -y software-properties-common &>/dev/null
 msg_ok "Installed Dependencies"
 
-msg_info "Setting Up Hardware Acceleration"  
-apt-get -y install \
-    va-driver-all \
-    ocl-icd-libopencl1 \
-    beignet-opencl-icd &>/dev/null
+msg_info "Skipping Hardware Acceleration"  
+#apt-get -y install \
+#    va-driver-all \
+#    ocl-icd-libopencl1 \
+#    beignet-opencl-icd &>/dev/null
     
-/bin/chgrp video /dev/dri
-/bin/chmod 755 /dev/dri
-/bin/chmod 660 /dev/dri/*
-msg_ok "Set Up Hardware Acceleration"  
+#/bin/chgrp video /dev/dri
+#/bin/chmod 755 /dev/dri
+#/bin/chmod 660 /dev/dri/*
+#msg_ok "Set Up Hardware Acceleration"  
 
 msg_info "Setting Up Jellyfin Repository"
 sudo add-apt-repository universe -y &>/dev/null
