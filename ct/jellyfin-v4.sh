@@ -3,7 +3,7 @@ echo -e "Loading..."
 APP="Jellyfin"
 var_disk="8"
 var_cpu="2"
-var_ram="2048"
+var_ram="4096"
 var_os="ubuntu"
 var_version="20.04"
 NSAPP=$(echo ${APP,,} | tr -d ' ')
@@ -100,9 +100,9 @@ function default_settings() {
 function advanced_settings() {
 var_version=$(whiptail --title "UBUNTU VERSION" --radiolist "Choose Version" 10 58 4 \
 "18.04" "Bionic" OFF \
-"20.04" "Focal" ON \
+"20.04" "Focal" OFF \
 "21.10" "Impish" OFF \
-"22.04" "Jammy" OFF \
+"22.04" "Jammy" ON \
 3>&1 1>&2 2>&3)
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
