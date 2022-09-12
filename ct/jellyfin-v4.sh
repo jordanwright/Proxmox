@@ -263,6 +263,15 @@ lxc.cgroup2.devices.allow: c 29:0 rwm
 lxc.mount.entry: /dev/fb0 dev/fb0 none bind,optional,create=file
 lxc.mount.entry: /dev/dri dev/dri none bind,optional,create=dir
 lxc.mount.entry: /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
+lxc.cgroup2.devices.allow: c 195:* rwm
+lxc.cgroup2.devices.allow: c 235:* rwm
+lxc.cgroup2.devices.allow: c 511:* rwm
+lxc.mount.entry: /dev/nvidia0 dev/nvidia0 none bind,optional,create=file
+lxc.mount.entry: /dev/nvidiactl dev/nvidiactl none bind,optional,create=file
+lxc.mount.entry: /dev/nvidia-uvm dev/nvidia-uvm none bind,optional,create=file
+lxc.mount.entry: /dev/nvidia-modeset dev/nvidia-modeset none bind,optional,create=file
+lxc.mount.entry: /dev/nvidia-uvm-tools dev/nvidia-uvm-tools none bind,optional,create=file
+
 EOF
 msg_info "Starting LXC Container"
 pct start $CTID
